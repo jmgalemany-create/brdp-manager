@@ -110,6 +110,10 @@ export async function sendMessage(
 
   let endpoint = 'https://api.anthropic.com/v1/messages';
 
+  if (provider === 'Mistral') {
+    endpoint = 'https://api.mistral.ai/v1/chat/completions';
+  }
+
   if (provider === 'OpenAI') {
     endpoint = 'https://api.openai.com/v1/chat/completions';
   }
@@ -187,6 +191,10 @@ export async function sendMessageStream(
   }
 
   let endpoint = 'https://api.anthropic.com/v1/messages';
+
+  if (provider === 'Mistral') {
+    endpoint = 'https://api.mistral.ai/v1/chat/completions';
+  }
 
   if (provider === 'OpenAI') {
     endpoint = 'https://api.openai.com/v1/chat/completions';
